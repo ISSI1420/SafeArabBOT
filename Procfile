@@ -1,1 +1,1 @@
-worker: python3 -m src.main
+worker: python3 -m Src.main

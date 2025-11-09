@@ -2,4 +2,5 @@ aiogram==2.25.2
 python-dotenv==1.0.1
 aiohttp==3.9.3
 pydantic==2.6.4
+# TON library - verify correct package for your integration. Keep as a loose dependency if unsure.
 ton

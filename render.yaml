@@ -3,4 +3,4 @@ services:
     name: safearabbot
     env: python
     buildCommand: pip install --upgrade pip && pip install -r requirements.txt
-    startCommand: python3 -m src.main
+    startCommand: python3 -m Src.main
