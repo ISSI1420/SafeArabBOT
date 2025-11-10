@@ -1,6 +1,7 @@
 aiogram==2.25.2
 python-dotenv==1.0.1
 aiohttp==3.8.4
+psycopg2-binary>=2.9
 pydantic==1.10.12
 # TON library - replace with the exact SDK you intend to use (e.g. ton-client==x.y.z)
 ton
