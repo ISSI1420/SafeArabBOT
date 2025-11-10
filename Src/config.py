@@ -36,4 +36,5 @@ DB_FILE = os.path.join(DATA_DIR, "safearab.db")
 
 # Small sanity check logs
 if not BOT_TOKEN:
-    print("Warning: BOT_TOKEN not set. Bot may not run correctly.")    pass
+    print("Warning: BOT_TOKEN not set. Bot may not run correctly.") 
+    
