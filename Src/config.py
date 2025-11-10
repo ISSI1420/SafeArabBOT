@@ -23,7 +23,13 @@ ADMIN_IDS = _parse_admin_ids(os.getenv("ADMIN_IDS", ""))
 TON_WALLET = os.getenv("TON_WALLET", "").strip()
 TON_API_KEY = os.getenv("TON_API_KEY", "").strip()
 TON_SEED = os.getenv("TON_SEED", "").strip()
-DB_FILE = os.getenv("DB_FILE", "db.sqlite3")
+# إنشاء مجلد Data داخل نفس مجلد config.py لو مش موجود
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DATA_DIR = os.path.join(BASE_DIR, "Data")
+os.makedirs(DATA_DIR, exist_ok=True)
+
+# قاعدة البيانات داخل المجلد Data
+DB_FILE = os.path.join(DATA_DIR, "safearab.db")
 
 # Small sanity checks for helpful logs
 if not BOT_TOKEN:
