@@ -5,11 +5,11 @@ from typing import List
 # Load .env from project root
 load_dotenv()
 
-def _parse_admin_ids(value: str) -> List[int]:
+def _parse_admin_ids(value: str) -> list[int]:
     if not value:
         return []
     parts = [p.strip() for p in value.split(",") if p.strip()]
-    out: List[int] = []
+    out: list[int] = []
     for p in parts:
         try:
             out.append(int(p))
@@ -27,14 +27,9 @@ TON_SEED = os.getenv("TON_SEED", "").strip()
 # -----------------------------
 # Database settings
 # -----------------------------
-# مجلد Data داخل مجلد العمل الحالي (قابل للكتابة)
-DATA_DIR = os.path.join(os.getcwd(), "Data")
-os.makedirs(DATA_DIR, exist_ok=True)
+# مسار ثابت لقاعدة البيانات داخل مجلد Data الذي ستنشئه بنفسك
+DB_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "Data", "safearab.db")
 
-# اسم ملف قاعدة البيانات داخل DATA_DIR
-DB_FILE = os.path.join(DATA_DIR, "safearab.db")
-
-# Small sanity check logs
+# تحذير لو لم يتم تعيين BOT_TOKEN
 if not BOT_TOKEN:
-    print("Warning: BOT_TOKEN not set. Bot may not run correctly.") 
-    
+    print("Warning: BOT_TOKEN not set. Bot may not run correctly.")
